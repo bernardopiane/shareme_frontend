@@ -7,8 +7,11 @@ import { FcGoogle } from 'react-icons/fc';
 import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
 
+import { client } from "../client"
+
 export default function Login() {
-    console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+
+    const navigate = useNavigate();
 
     const responseGoogle = (response) => {
         // Handle google auth response
@@ -22,6 +25,12 @@ export default function Login() {
             username: name,
             image: imageUrl,
         };
+
+        client.createIfNotExists(doc).then(() => {
+            // Redirect to home
+            navigate('/', { replace: true });
+        });
+
     }
 
     return (
@@ -29,7 +38,7 @@ export default function Login() {
             <div className='relative w-full h-full'>
                 <video className='w-full h-full object-cover' autoPlay loop muted src={shareVideo} type='video/mp4' />
                 <div className='absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay'>
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-center items-center">
                         <img src={logo} alt="logo" width="130px" />
                         <div className="shadow-2xl mt-4">
                             <GoogleLogin
