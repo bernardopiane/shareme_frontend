@@ -45,7 +45,7 @@ export default function Login() {
                                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                 render={(renderProps) => {
                                     return (
-                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className='bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white rounded flex justify-center items-center p-3 cursor-pointer outline-none' onClick={renderProps.onClick}>
+                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className='bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white rounded flex justify-center items-center p-3 cursor-pointer outline-none'>
                                             <FcGoogle className='mr-2' />
                                             Login with Google
                                         </button>
