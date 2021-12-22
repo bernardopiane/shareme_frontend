@@ -6,19 +6,10 @@ import { IoIosArrowFoward } from "react-icons/io"
 
 import logo from '../assets/logo.png'
 
+import { categories } from '../utils/data'
+
 const isNotActiveStyle = "flex items-center px-5 gap-3 text-gray-500 hover:text-black transistion-all duration-200 ease-in-out captilize"
 const isActiveStyle = "flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transistion-all duration-200 ease-in-out captilize"
-
-const categories = [
-    { name: 'Animals' },
-    { name: 'Art' },
-    { name: 'Cars' },
-    { name: 'Food' },
-    { name: 'Funny' },
-    { name: 'Games' },
-    { name: 'Music' },
-    { name: 'Others' },
-]
 
 
 function Sidebar({ user, closeToggle }) {
@@ -27,7 +18,7 @@ function Sidebar({ user, closeToggle }) {
             closeToggle()
         }
     }
-    
+
     return (
         <div className='flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar'>
             <div className="flex flex-col">
@@ -42,7 +33,7 @@ function Sidebar({ user, closeToggle }) {
                     <h3 className="mt-2 px-5 text-base 2xl:text-xl">Discover categories</h3>
                     {categories.slice(0, categories.length - 1).map((category, index) => (
                         <NavLink key={index} to={`/category/${category.name}`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle} onClick={handleCloseSidebar}>
-                            {category.name}
+                            <div className="capitalize">{category.name}</div>
                         </NavLink>
                     ))}
                 </div>

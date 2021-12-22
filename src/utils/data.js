@@ -1,3 +1,43 @@
+// Categories[{name: '', image: ''}]
+export const categories = [
+  {
+    name: "cars",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "fitness",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "food",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "games",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "health",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "music",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "sports",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "travel",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+  {
+    name: "others",
+    image: "https://i.imgur.com/qkdpN.png",
+  },
+];
+
 export const userQuery = (userId) => {
   const query = `*[_type == "user" && _id == "${userId}"]`;
 
