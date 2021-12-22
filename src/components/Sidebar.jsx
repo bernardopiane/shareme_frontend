@@ -2,7 +2,7 @@ import React from 'react'
 // Import NavLink and Link
 import { NavLink, Link } from 'react-router-dom'
 import { RiHomeFill } from "react-icons/ri"
-import { IoIosArrowFoward } from "react-icons/io"
+// import { IoIosArrowFoward } from "react-icons/io"
 
 import logo from '../assets/logo.png'
 
