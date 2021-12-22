@@ -33,6 +33,7 @@ function Sidebar({ user, closeToggle }) {
                     <h3 className="mt-2 px-5 text-base 2xl:text-xl">Discover categories</h3>
                     {categories.slice(0, categories.length - 1).map((category, index) => (
                         <NavLink key={index} to={`/category/${category.name}`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle} onClick={handleCloseSidebar}>
+                            <img src={category.image} alt="logo" className='w-8 h-8 rounded-full shadow-sm' />
                             <div className="capitalize">{category.name}</div>
                         </NavLink>
                     ))}

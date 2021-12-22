@@ -112,23 +112,26 @@ function PinDetail({ user }) {
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-wrap mt-6 gap-3 items-center">
-                        <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
-                            <img className="rounded-full w-8 h-8 cursor-pointer" alt='user-profile' src={pinDetail.postedBy?.image} />
-                        </Link>
-                        <input
-                            className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300'
-                            type="text"
-                            placeholder="Add a comment"
-                            value={comment}
-                            onChange={(e) => setComment(e.target.value)} />
-                        <button
+                    {user && (
+                        <div className="flex flex-wrap mt-6 gap-3 items-center">
+                            <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
+                                <img className="rounded-full w-8 h-8 cursor-pointer" alt='user-profile' src={pinDetail.postedBy?.image} />
+                            </Link>
+                            <input
+                                className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300'
+                                type="text"
+                                placeholder="Add a comment"
+                                value={comment}
+                                onChange={(e) => setComment(e.target.value)} />
+                            <button
 
-                            className="bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
-                            onClick={addComment}>
-                            {addingComment ? "Posting the comment..." : "Post"}
-                        </button>
-                    </div>
+                                className="bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
+                                onClick={addComment}>
+                                {addingComment ? "Posting the comment..." : "Post"}
+                            </button>
+                        </div>
+
+                    )}
                 </div>
             </div>
             {pins?.length > 0 ? (

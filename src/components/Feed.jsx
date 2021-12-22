@@ -20,7 +20,8 @@ function Feed() {
             // Fetch category pin
             const query = searchQuery(categoryId);
             client.fetch(query).then(data => {
-                setPins(data.pins);
+                console.log(data);
+                setPins(data);
                 setLoading(false);
             });
         } else {
@@ -35,6 +36,8 @@ function Feed() {
 
     // If loading return a spinner
     if (loading) return <Spinner message="We are adding new ideas to your feed!" />
+
+    if(!pins?.length) return <h2>No pins available</h2>
 
     return (
         <div>
