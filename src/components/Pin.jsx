@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { client, urlFor } from '../client'
 // Import Link useNavigate
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // Import uuidv4
 import { v4 as uuidv4 } from 'uuid'
 // Import Icons
