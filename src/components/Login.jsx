@@ -17,6 +17,8 @@ export default function Login() {
         // Handle google auth response
         localStorage.setItem('user', JSON.stringify(response.profileObj));
 
+        console.log(response.profileObj);
+
         const { name, googleId, imageUrl } = response.profileObj;
         // Create new sanity user
         const doc = {
@@ -51,8 +53,14 @@ export default function Login() {
                                         </button>
                                     )
                                 }}
-                                onSuccess={responseGoogle}
-                                onFailure={responseGoogle}
+                                onSuccess={(response) => {
+                                    console.log(response);
+                                    responseGoogle(response);
+                                }}
+                                onFailure={(response) => {
+                                    console.log(response);
+                                    responseGoogle(response);
+                                }}
                                 cookiePolicy={'single_host_origin'}
                             />
                         </div>
